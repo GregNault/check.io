@@ -1,5 +1,14 @@
 #Converts the date format, also has to check the validity of the date inputted
 
+# the one below was clearest solution given
+import datetime
+def convert_date(date: str) -> str:
+    try:
+        date_obj = datetime.datetime.strptime(date, '%d/%m/%Y')
+        return date_obj.strftime('%Y-%m-%d')
+    except:
+        return "Error: Invalid date."
+
 #This one took awhile, tried to do it in one function but got to messy so changed it to three
 #Also, had tried to leave variebles as their list address (i.e. int(str_list[0])), but renamed to mon, day, year
 #to make it simpler/more readable
